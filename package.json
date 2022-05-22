@@ -1,0 +1,36 @@
+{
+  "name": "piano",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "build": "run-p build:*",
+    "build:parcel": "parcel build",
+    "dev": "run-p dev:*",
+    "dev:parcel-watch": "parcel watch",
+    "test": "run-p test:*",
+    "test:basic": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/18nguyenl/Piano.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/18nguyenl/Piano/issues"
+  },
+  "homepage": "https://github.com/18nguyenl/Piano#readme",
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.5.0",
+    "@parcel/transformer-typescript-types": "^2.5.0",
+    "npm-run-all": "^4.1.5",
+    "parcel": "^2.5.0",
+    "typescript": "^4.6.4",
+    "vitest": "^0.12.9"
+  }
+}
