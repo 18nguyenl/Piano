@@ -1,6 +1,15 @@
+/** @module midi/PhysicalPiano */
+
+/**
+ * Interface that connects and works with the external MIDI input device
+ */
 export class PhysicalPiano {
   midi: WebMidi.MIDIAccess;
 
+  /**
+   * Set up and configure external MIDI input device to be interfaced
+   * @constructor
+   */
   constructor() {
     this.requestMIDIAccess().then(
       (midi) => {
@@ -12,6 +21,11 @@ export class PhysicalPiano {
     );
   }
 
+  /**
+   * Try to get access to the physical MIDI device
+   *
+   * @returns a promise to when a MIDI device is connected
+   */
   requestMIDIAccess(): Promise<WebMidi.MIDIAccess> {
     if (!navigator.requestMIDIAccess) {
       console.error("MIDI is not supported in this browser");
@@ -21,6 +35,9 @@ export class PhysicalPiano {
     }
   }
 
+  /**
+   * Will enable messages for any input given from the physical MIDI device.
+   */
   debugMIDI() {
     function onMIDIMessage(message) {
       console.log(message.data);
