@@ -15,6 +15,9 @@
     "test": "run-p test:*",
     "test:vitest": "vitest run"
   },
+  "alias": {
+    "midi": "./src/midi"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/18nguyenl/Piano.git"

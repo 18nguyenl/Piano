@@ -1,4 +1,4 @@
-import { PhysicalPiano } from "../../src/index";
+import { PhysicalPiano } from "../../dist/module";
 
 describe("Midi Setup Working", () => {
   it("Web Midi supported in browser", () => {

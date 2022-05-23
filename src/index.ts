@@ -1,4 +1,4 @@
-import { PhysicalPiano } from "./midi";
+import { PhysicalPiano } from "midi";
 export { PhysicalPiano };
 
 export function add(a, b) {
