@@ -11,7 +11,7 @@
     "build:parcel": "parcel build",
     "dev": "run-p dev:*",
     "dev:parcel-watch": "parcel watch",
-    "dev:test-web": "npm run --prefix test-web dev",
+    "dev:test-web": "parcel test-web/index.html --port 8000",
     "test": "run-p test:*",
     "test:vitest": "vitest run",
     "test:cypress": "cypress open"
@@ -39,5 +39,8 @@
     "parcel": "^2.5.0",
     "typescript": "^4.6.4",
     "vitest": "^0.12.9"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2"
   }
 }
