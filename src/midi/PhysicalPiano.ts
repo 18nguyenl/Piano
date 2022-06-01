@@ -53,4 +53,33 @@ export class PhysicalPiano {
       input.value.onmidimessage = onMIDIMessage;
     }
   }
+
+  listenValue() {
+    const inputs = this.midi.inputs.values();
+    const body = document.body;
+    const newElement = document.createElement("div");
+    body.appendChild(newElement);
+    for (
+      let input = inputs.next();
+      input && !input.done;
+      input = inputs.next()
+    ) {
+      // each time there is a midi message call the onMIDIMessage function
+      input.value.onmidimessage = (message) => {
+        newElement.textContent = JSON.stringify(this.parseMidiMessage(message));
+      };
+    }
+  }
+
+  /**
+   * Parse basic information out of a MIDI message.
+   */
+  parseMidiMessage(message) {
+    return {
+      command: message.data[0] >> 4,
+      channel: message.data[0] & 0xf,
+      note: message.data[1],
+      velocity: message.data[2] / 127,
+    };
+  }
 }
