@@ -1,11 +1,6 @@
 import { assert, beforeEach, describe, expect, test } from "vitest";
 
-import { add, store, incrementCount, decrementCount } from "../dist/module";
-
-test("add()", () => {
-  expect(add(2, 2)).toBe(4);
-  expect(add(-2, 2)).toBe(0);
-});
+import { store, incrementCount, decrementCount } from "../dist/module";
 
 describe("trying to count", () => {
   beforeEach(() => {
