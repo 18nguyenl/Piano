@@ -6,7 +6,7 @@
       "script": "dev",
       "problemMatcher": [],
       "label": "Development",
-      "detail": "run-p dev:*"
+      "detail": "npm run dev"
     },
     {
       "type": "npm",

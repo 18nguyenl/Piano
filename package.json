@@ -10,8 +10,8 @@
     "build": "run-p build:*",
     "build:parcel": "parcel build",
     "dev": "run-p dev:*",
-    "dev:parcel-watch": "parcel watch",
-    "dev:test-web": "npm run --prefix test-web dev",
+    "dev:parcel-watch": "parcel watch 'src/*.ts'",
+    "dev:test-web": "parcel test-web/index.html --port 8000 --no-cache",
     "test": "run-p test:*",
     "test:vitest": "vitest run"
   },
